@@ -61,7 +61,10 @@ func (cr *Crawler) GetTradingView(ctx context.Context) (*TradingViewData, error)
 		title = append(title, getBlockTitle(v))
 	}
 
-	return nil, nil
+	result := TradingViewData{
+		Title: title,
+	}
+	return &result, nil
 }
 
 func getBlockTitle(n *html.Node) string {
